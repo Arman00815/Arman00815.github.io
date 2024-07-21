@@ -1,0 +1,210 @@
+@media screen and (max-width: 1500px) {
+    .mainn-next .text3 h1{
+        width: auto !important;
+        font-size: 35px !important;
+    }
+    .mainn-next .text3 p{
+        width: auto !important;
+    }
+    .mainn-next .text3{
+        padding-left: 10px !important;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .mainn{
+        gap: 50px !important;
+    }
+    .mainn .text3 h1{
+        width: auto !important;
+    }
+    .mainn .text3 p{
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nax-com{
+        flex-direction: column !important; 
+        align-items: center !important;
+    }
+    .unic{
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .text h1{
+        width: 350px !important;
+    }
+
+    .text-sec2{
+        flex-direction: column !important;
+        row-gap: 25px !important;
+        align-items: center !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .text2{
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .mainn .text3 h1{
+        width: 413px !important;
+    }
+
+    .mainn .text3 p{
+        width: 556px !important;
+    }
+
+    .mainn{
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+    }
+    .mainn-next{
+        flex-direction: column !important;
+        align-items: center !important;
+        row-gap: 25px !important;
+    }
+
+    .mainn-next .text3 h1{
+        width: 413px !important;
+        font-size: 42px !important;
+    }
+    
+    .mainn-next .text3 p{
+        width: 556px !important;
+    }
+    .log-text-navv{
+        flex-direction: column !important;
+        align-items: center !important;
+        row-gap: 50px !important;
+    }
+    .navvv{
+        gap: 50px !important;
+    }
+}
+
+
+@media screen and (max-width: 880px) {
+    .text-sec h1{
+        font-size: 70px !important;
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .photo2{
+        flex-direction: column !important;
+    }
+    .phs{
+        flex-direction: row !important;
+    }
+}
+
+@media screen and (max-width: 615px) {
+   .mainn .text3{
+        padding-left: 15px !important;
+    }
+   .mainn .text3 h1{
+        width: auto !important;
+    }
+   .mainn .text3 p{
+        width: auto !important;
+    }
+    .photo img{
+        width: 500px !important;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .text-sec p{
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .phs{
+        flex-direction: column !important;
+    }
+    .mainn-next .text3 h1{
+        width: auto !important;
+    }
+    .mainn-next .text3 p{
+        width: auto !important;
+    }
+    .unic{
+        width: 450px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .text-sec h1{
+        font-size: 50px !important;
+    }
+    .photo img{
+        width: 350px !important;
+    }
+    .navvv{
+        flex-direction: column !important;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .unic{
+        width: 350px !important;
+    }
+    .nax-text h1{
+        width: 250px !important;
+        text-align: center !important;
+    }
+    .verjjj{
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .text h1{
+        width: 250px !important;
+        text-align: center !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .sec3-text h1{
+        text-align: center !important;
+        width: 350px !important;
+        font-size: 50px !important;
+    }
+}
+
+@media screen and (max-width: 383px) {
+    .photo img{
+        width: 250px !important;
+    }
+    .nax-com{
+        transform: scale(0.9) !important;
+        margin-left: -15px !important;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .text h1{
+        font-size: 30px !important;
+        padding-left: 30px !important;
+    }
+    .unic{
+        width: 250px !important;
+        padding-left: 25px !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .nax-com{
+        transform: scale(0.9) !important;
+    }
+    .searchBox .search-field{
+        width: 250px !important;
+    }
+    
+}

@@ -1,0 +1,532 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.light section{
+    background-image: url("../assets/img/Rectangle\ 1441.png");
+    width: 100%;
+    height: 1384px;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+.light .text-sec{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light .text-sec h1{
+  width: 880px;
+  font-size: 80px;
+  line-height: 104px;
+  letter-spacing: -1%;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Gilroy-Bold;
+  margin-top: 90px;
+}
+
+.light .text-sec p{
+  width: 606px;
+  font-size: 24px;
+  line-height: 38.4px;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Gilroy-Regular;
+}
+
+.light .text-sec2{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 120px;
+
+}
+
+.light .text h1{
+  font-family: Gilroy-Bold;
+  font-size: 42px;
+  line-height: 49.22px;
+  color: #1E1E1E;
+  width: 242px;
+}
+
+.light .txt{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.light .txt h1{
+  font-family: Gilroy-Bold;
+  font-size: 24px;
+  line-height: 28.13px;
+  color: #1E1E1E;
+}
+
+.light .txt p{
+  width: 284px;
+  font-family: Gilroy-Regular;
+  font-size: 16px;
+  line-height: 29.6px;
+  color: #1E1E1E;
+}
+
+.light .txt-gic a{
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  line-height: 25.9px;
+  color: #E58411;
+  text-decoration: none;
+  margin-top: -5px;
+}
+
+.light .txt-gic{
+  display: flex;
+  gap: 7.2px;
+}
+
+.light .gic{
+  margin-top: -5px;
+}
+
+.light .text2{
+  display: flex;
+  gap: 28px;
+}
+
+.light .section3{
+  width: 100%;
+  margin-top: 120px;
+}
+
+.light .sec3-text{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.light .sec3-text h1{
+  font-family: Gilroy-Bold;
+  font-size: 42px;
+  line-height: 49.22px;
+  color: #1E1E1E;
+  margin-top: 50px;
+}
+
+.light .btnn{
+  width: 348px;
+  height: 57px;
+  border-radius: 44px;
+  padding: 6px;
+  background-color: #EEEEEE;
+  display: flex;
+  gap: 45px;
+  align-items: center;
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  line-height: 33.3px;
+  color: #1E1E1E;
+  text-transform:capitalize;
+  justify-content: center;
+}
+
+.light .btnn p:hover{
+background-color: #fff;
+width: 84px;
+height: 45px;
+border-radius: 32px;
+padding: 4px;
+padding-left: 10px;
+gap: 10px;
+}
+
+.light .button{
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+}
+
+.light h2{
+	color: #000;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	margin: 30px 0 60px;
+}
+.light h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 4px;
+	border-radius: 1px;
+	background: #7ac400;
+	left: 0;
+	right: 0;
+	bottom: -20px;
+}
+.light .carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.light .carousel .item {
+	color: #747d89;
+	min-height: 325px;
+	text-align: center;
+	overflow: hidden;
+}
+.light .carousel .thumb-wrapper {
+	padding: 25px 15px;
+	border-radius: 6px;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+.light .carousel .item .img-box {
+	height: 120px;
+	margin-bottom: 20px;
+	width: 100%;
+	position: relative;
+}
+.light .carousel .item img {	
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.light .carousel .item h4 {
+	font-size: 18px;
+}
+.light .carousel .item h4, .light .carousel .item p, .light .carousel .item ul {
+	margin-bottom: 5px;
+}
+.light .carousel .thumb-content .btn {
+	color: #7ac400;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background: none;
+	border: 1px solid #7ac400;
+	padding: 6px 14px;
+	margin-top: 5px;
+	line-height: 16px;
+	border-radius: 20px;
+}
+.light .carousel .thumb-content .btn:hover, .light .carousel .thumb-content .btn:focus {
+	color: #fff;
+	background: #7ac400;
+	box-shadow: none;
+}
+.light .carousel .thumb-content .btn i {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+.light .carousel .item-price {
+	font-size: 13px;
+	padding: 2px 0;
+}
+.light .carousel .item-price strike {
+	opacity: 0.7;
+	margin-right: 5px;
+}
+.light .carousel-control-prev, .light .carousel-control-next {
+	height: 44px;
+	width: 40px;
+	background: #7ac400;	
+	margin: auto 0;
+	border-radius: 4px;
+	opacity: 0.8;
+}
+.light .carousel-control-prev:hover, .light .carousel-control-next:hover {
+	background: #78bf00;
+	opacity: 1;
+}
+.light .carousel-control-prev i, .light .carousel-control-next i {
+	font-size: 36px;
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	margin: -19px 0 0 0;
+	z-index: 5;
+	left: 0;
+	right: 0;
+	color: #fff;
+	text-shadow: none;
+	font-weight: bold;
+}
+.light .carousel-control-prev i {
+	margin-left: -2px;
+}
+.light .carousel-control-next i {
+	margin-right: -4px;
+}		
+.light .carousel-indicators {
+	bottom: -50px;
+}
+.light .carousel-indicators li, .light .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 4px;
+	border-radius: 50%;
+	border: none;
+}
+.light .carousel-indicators li {	
+	background: rgba(0, 0, 0, 0.2);
+}
+.light .carousel-indicators li.active {	
+	background: rgba(0, 0, 0, 0.6);
+}
+.light .carousel .wish-icon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 99;
+	cursor: pointer;
+	font-size: 16px;
+	color: #abb0b8;
+}
+.light .carousel .wish-icon .fa-heart {
+	color: #ff6161;
+}
+.light .star-rating li {
+	padding: 0;
+}
+.light .star-rating i {
+	font-size: 14px;
+	color: #ffc000;
+}
+
+.light .txt-gic2 a{
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  line-height: 25.9px;
+  color: #E58411;
+  text-decoration: none;
+  margin-top: -5px;
+}
+
+.light .txt-gic2{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 7.2px;
+}
+
+.light .mainn{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 300px;
+}
+
+.light .text3 h4{
+  font-size: 18px;
+  line-height: 21.09px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #E58411;
+}
+
+.light .text3 h1{
+  width: 413px;
+  font-size: 42px;
+  line-height: 49.22px;
+  text-transform:capitalize;
+  color: #1E1E1E;
+  font-family: Gilroy-Bold;
+}
+
+.light .text3 p{
+  width: 556px;
+  font-size: 18px;
+  line-height: 33.3px;
+  color: #1E1E1E;
+  font-family: Gilroy-Regular;
+}
+
+.light .photo2{
+  display: flex;
+}
+
+.light .unic{
+  height: 629px;
+}
+
+.light .phs{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.light .mainn-next{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 270px;
+  align-items: center;
+}
+
+.light .nax-text p{
+  font-family: Gilroy-SemiBold;
+  font-size: 18px;
+  line-height: 21.09px;
+  letter-spacing: 1px;
+  color: #E58411;
+  text-transform: uppercase;
+}
+
+.light .nax-text h1{
+  font-family: Gilroy-Bold;
+  font-size: 42px;
+  line-height: 49.22px;
+  color: #1E1E1E;
+}
+
+.light .nax-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 240px;
+}
+
+.light .com1{
+  background-image: url("../assets/img/Group\ 48095427.png");
+  width: 370px;
+  height: 506px;
+  background-repeat: no-repeat;
+}
+
+.light .com2{
+  background-image: url("../assets/img/Group\ 480954199.png");
+  width: 370px;
+  height: 506px;
+  background-repeat: no-repeat;
+
+}
+
+.light .com3{
+  background-image: url("../assets/img/Group\ 48095420.png");
+  width: 370px;
+  height: 506px;
+  background-repeat: no-repeat;
+}
+
+.light .nax-com{
+  display: flex;
+  justify-content: center;
+  gap: 39px;
+}
+
+.light .loggoo a{
+  font-family: Gilroy-Bold;
+  font-size: 28px;
+  letter-spacing: 1%;
+  color: #1E1E1E;
+  text-decoration: none;
+}
+
+.light .text-lgo p{
+  width: 293px;
+  font-family: Gilroy-Medium;
+  font-size: 15px;
+  line-height: 160%;
+  color: #1E1E1E;
+}
+
+.light .loggoo-text{
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+
+.light .navvv ul li a{
+    text-decoration: none;
+    font-family: Gilroy-Medium;
+    line-height: 160%;
+    color: #1E1E1E;
+    font-size: 15px;
+}
+
+.light .navvv ul p{
+  font-size: 17px;
+  text-decoration: none;
+  font-family: Gilroy-Medium;
+  color: #F6973F;
+  letter-spacing: -0.23px;
+}
+
+.light .navvv ul li{
+    list-style-type: none;
+}
+
+.light .navvv ul{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.light .log-text-navv{
+  display: flex;
+  justify-content: space-evenly
+  ;
+  padding-top: 118px;
+}
+
+.light footer{
+  margin-top: 215px;
+}
+
+.light .navvv{
+    display: flex;
+    gap: 150px;
+}
+
+.light .face{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.light .Twit{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.light .Insta{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.light .verja a{
+      text-decoration: none;
+      font-size: 15px;
+      font-family: Gilroy-Medium;
+      color: #1E1E1E;
+      line-height: 160%;
+}
+
+.light .verja{
+    display: flex;
+    gap: 40px;
+}
+
+.light .verjjj{
+    display: flex;
+    margin-top: 118px;
+    justify-content: space-around;
+}

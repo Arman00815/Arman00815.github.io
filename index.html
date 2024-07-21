@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/media.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/media.css">
+	<link rel="stylesheet" href="./css/dark.css">
+	<link rel="icon" href="assets/img/icon.png">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title> Home Furniture </title>
+</head>
+<body>
+
+	<div class="light">
+		<nav>
+			<div class="nav-bar">
+				<i class='bx bx-menu sidebarOpen' ></i>
+				<span class="logo navLogo"><a href="#">Furniture</a></span>
+	
+				<div class="menu">
+					<div class="logo-toggle">
+						<span class="logo"><a href="#">FURNITURE</a></span>
+						<i class='bx bx-x siderbarClose'></i>
+					</div>
+	
+					<ul class="nav-links">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Portfolio</a></li>
+						<li><a href="#">Services</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+	
+				<div class="darkLight-searchBox">
+					<div class="dark-light">
+						<i onclick="dark()" class='bx bx-moon moon'></i>
+						<i class='bx bx-sun sun'></i>
+					</div>
+	
+					<div class="searchBox">
+					   <div class="searchToggle">
+						<i class='bx bx-x cancel'></i>
+						<i class='bx bx-search search'></i>
+					   </div>
+	
+						<div class="search-field">
+							<input type="text" placeholder="Search...">
+							<i class='bx bx-search'></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	
+	<script>
+	
+	const body = document.querySelector("body"),
+		  nav = document.querySelector("nav"),
+		  modeToggle = document.querySelector(".dark-light"),
+		  searchToggle = document.querySelector(".searchToggle"),
+		  sidebarOpen = document.querySelector(".sidebarOpen"),
+		  siderbarClose = document.querySelector(".siderbarClose");
+	
+		  let getMode = localStorage.getItem("mode");
+			  if(getMode && getMode === "dark-mode"){
+				body.classList.add("dark");
+			  }
+	
+	// js code to toggle dark and light mode
+		  modeToggle.addEventListener("click" , () =>{
+			modeToggle.classList.toggle("active");
+			body.classList.toggle("dark");
+	
+			// js code to keep user selected mode even page refresh or file reopen
+			if(!body.classList.contains("dark")){
+				localStorage.setItem("mode" , "light-mode");
+			}else{
+				localStorage.setItem("mode" , "dark-mode");
+			}
+		  });
+	
+	// js code to toggle search box
+			searchToggle.addEventListener("click" , () =>{
+			searchToggle.classList.toggle("active");
+		  });
+	 
+		  
+	//   js code to toggle sidebar
+	sidebarOpen.addEventListener("click" , () =>{
+		nav.classList.add("active");
+	});
+	
+	body.addEventListener("click" , e =>{
+		let clickedElm = e.target;
+	
+		if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+			nav.classList.remove("active");
+		}
+	});
+	
+	</script>
+	
+	<style>
+		/* ===== Google Font Import - Poppins ===== */
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+	
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+		transition: all 0.4s ease;;
+	}
+	
+	
+	/* ===== Colours ===== */
+	:root{
+		--body-color: #E4E9F7;
+		--nav-color: #4070F4;
+		--side-nav: #010718;
+		--text-color: #FFF;
+		--search-bar: #F2F2F2;
+		--search-text: #010718;
+	}
+	
+	body{
+		height: 100vh;
+		background-color: var(--body-color);
+	}
+	
+	body.dark{
+		--body-color: #18191A;
+		--nav-color: #242526;
+		--side-nav: #242526;
+		--text-color: #CCC;
+		--search-bar: #242526;
+	}
+	
+	nav{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 70px;
+		width: 100%;
+		background-color: var(--nav-color);
+		z-index: 100;
+	}
+	
+	body.dark nav{
+		border: 1px solid #393838;
+	
+	}
+	
+	nav .nav-bar{
+		position: relative;
+		height: 100%;
+		max-width: 1000px;
+		width: 100%;
+		background-color: var(--nav-color);
+		margin: 0 auto;
+		padding: 0 30px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	nav .nav-bar .sidebarOpen{
+		color: var(--text-color);
+		font-size: 25px;
+		padding: 5px;
+		cursor: pointer;
+		display: none;
+	}
+	
+	nav .nav-bar .logo a{
+		font-size: 25px;
+		font-weight: 500;
+		color: var(--text-color);
+		text-decoration: none;
+	}
+	
+	.menu .logo-toggle{
+		display: none;
+	}
+	
+	.nav-bar .nav-links{
+		display: flex;
+		margin-top: 15px;
+		align-items: center;
+	}
+	
+	.nav-bar .nav-links li{
+		margin: 0 5px;
+		list-style: none;
+	}
+	
+	.nav-links li a{
+		position: relative;
+		font-size: 17px;
+		font-weight: 400;
+		color: var(--text-color);
+		text-decoration: none;
+		padding: 10px;
+	}
+	
+	.nav-links li a::before{
+		content: '';
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		height: 6px;
+		width: 6px;
+		border-radius: 50%;
+		background-color: var(--text-color);
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+	
+	.nav-links li:hover a::before{
+		opacity: 1;
+	}
+	
+	.nav-bar .darkLight-searchBox{
+		display: flex;
+		align-items: center;
+	}
+	
+	.darkLight-searchBox .dark-light,
+	.darkLight-searchBox .searchToggle{
+		height: 40px;
+		width: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 5px;
+	}
+	
+	.dark-light i,
+	.searchToggle i{
+		position: absolute;
+		color: var(--text-color);
+		font-size: 22px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+	
+	.dark-light i.sun{
+		opacity: 0;
+		pointer-events: none;
+	}
+	
+	.dark-light.active i.sun{
+		opacity: 1;
+		pointer-events: auto;
+	}
+	
+	.dark-light.active i.moon{
+		opacity: 0;
+		pointer-events: none;
+	}
+	
+	.searchToggle i.cancel{
+		opacity: 0;
+		pointer-events: none;
+	}
+	
+	.searchToggle.active i.cancel{
+		opacity: 1;
+		pointer-events: auto;
+	}
+	
+	.searchToggle.active i.search{
+		opacity: 0;
+		pointer-events: none;
+	}
+	
+	.searchBox{
+		position: relative;
+	}
+	
+	.searchBox .search-field{
+		position: absolute;
+		bottom: -85px;
+		right: 5px;
+		height: 50px;
+		width: 300px;
+		display: flex;
+		align-items: center;
+		background-color: var(--nav-color);
+		padding: 3px;
+		border-radius: 6px;
+		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.3s ease;
+	}
+	
+	.searchToggle.active ~ .search-field{
+		bottom: -74px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+	
+	.search-field::before{
+		content: '';
+		position: absolute;
+		right: 14px;
+		top: -4px;
+		height: 12px;
+		width: 12px;
+		background-color: var(--nav-color);
+		transform: rotate(-45deg);
+		z-index: -1;
+	}
+	
+	.search-field input{
+		height: 100%;
+		width: 100%;
+		padding: 0 45px 0 15px;
+		outline: none;
+		border: none;
+		border-radius: 4px;
+		font-size: 14px;
+		font-weight: 400;
+		color: var(--search-text);
+		background-color: var(--search-bar);
+	}
+	
+	body.dark .search-field input{
+		color: var(--text-color);
+	}
+	
+	.search-field i{
+		position: absolute;
+		color: var(--nav-color);
+		right: 15px;
+		font-size: 22px;
+		cursor: pointer;
+	}
+	
+	body.dark .search-field i{
+		color: var(--text-color);
+	}
+	
+	@media (max-width: 790px) {
+		nav .nav-bar .sidebarOpen{
+			display: block;
+		}
+	
+		.menu{
+			position: fixed;
+			height: 100%;
+			width: 320px;
+			left: -100%;
+			top: 0;
+			padding: 20px;
+			background-color: var(--side-nav);
+			z-index: 100;
+			transition: all 0.4s ease;
+		}
+	
+		nav.active .menu{
+			left: -0%;
+		}
+	
+		nav.active .nav-bar .navLogo a{
+			opacity: 0;
+			transition: all 0.3s ease;
+		}
+	
+		.menu .logo-toggle{
+			display: block;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	
+		.logo-toggle .siderbarClose{
+			color: var(--text-color);
+			font-size: 24px;
+			cursor: pointer;
+		}
+	
+		.nav-bar .nav-links{
+			flex-direction: column;
+			padding-top: 30px;
+		}
+	
+		.nav-links li a{
+			display: block;
+			margin-top: 20px;
+		}
+	}
+	</style>
+	
+	
+		<section>
+				<div class="text-sec">
+					<h1>
+						Make your interior more minimalistic & modern
+					</h1>
+					<p>
+						Turn your room with panto into a lot more minimalist and modern with ease and speed
+					</p>
+				</div>
+		</section>
+	
+		<div class="section2">
+				<div class="text-sec2">
+					<div class="text">
+						<h1>
+							Why Choosing Us
+						</h1>
+					</div>
+					<div class="text2">
+						<div class="txt">
+							<h1>
+								Luxury facilities
+							</h1>
+							<p>
+								The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.
+							</p>
+							<div class="txt-gic">
+								<a href="">More Info</a>
+								<div class="gic">
+									<img src="./assets/img/grommet-icons_form-next-link.png" alt="">
+								</div>
+							</div>
+	
+						</div>
+	
+						<div class="txt">
+							<h1>
+								Luxury facilities
+							</h1>
+							<p>
+								The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.
+							</p>
+							<div class="txt-gic">
+								<a href="">More Info</a>
+								<div class="gic">
+									<img src="./assets/img/grommet-icons_form-next-link.png" alt="">
+								</div>
+							</div>
+	
+						</div>
+	
+	
+						<div class="txt">
+							<h1>
+								Luxury facilities
+							</h1>
+							<p>
+								The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.
+							</p>
+							<div class="txt-gic">
+								<a href="">More Info</a>
+								<div class="gic">
+									<img src="./assets/img/grommet-icons_form-next-link.png" alt="">
+								</div>
+							</div>
+	
+						</div>
+	
+					</div>
+				   
+				</div>
+		</div>
+	
+	<div class="section3">
+		<div class="sec3-text">
+			<h1>
+				Best Selling Product
+			</h1>
+		</div>
+	
+	
+	<div class="container-xl">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+				<!-- Carousel indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>   
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+					<div class="item carousel-item active">
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/sakarias-armchair-black-sporda-dark-gray__0729767_pe737131_s5_adobespark.png" class="img-fluid" alt="">									
+									</div>
+									<div class="thumb-content">
+										<h4>Apple iPad</h4>									
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<p class="item-price"><strike>$400.00</strike> <b>$369.00</b></p>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/Group 3742.png" class="img-fluid" alt="Headphone">
+									</div>
+									<div class="thumb-content">
+										<h4>Sony Headphone</h4>									
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<p class="item-price"><strike>$25.00</strike> <b>$23.99</b></p>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>		
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/Group 3742 (1).png" class="img-fluid" alt="Macbook">
+									</div>
+									<div class="thumb-content">
+										<h4>Macbook Air</h4>									
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+											</ul>
+										</div>
+										<p class="item-price"><strike>$899.00</strike> <b>$649.00</b></p>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>								
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/Group 3742 (2).png" class="img-fluid" alt="Nikon">
+									</div>
+									<div class="thumb-content">
+										<h4>Nikon DSLR</h4>									
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<p class="item-price"><strike>$315.00</strike> <b>$250.00</b></p>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item carousel-item">
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/download 1 (1).png" class="img-fluid" alt="Play Station">
+									</div>
+									<div class="thumb-content">
+										<h4>Sony Play Station</h4>
+										<p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/download 2 (1).png" class="img-fluid" alt="Macbook">
+									</div>
+									<div class="thumb-content">
+										<h4>Macbook Pro</h4>
+										<p class="item-price"><strike>$1099.00</strike> <span>$869.00</span></p>
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+											</ul>
+										</div>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/download 4.png" class="img-fluid" alt="Speaker">
+									</div>
+									<div class="thumb-content">
+										<h4>Bose Speaker</h4>
+										<p class="item-price"><strike>$109.00</strike> <span>$99.00</span></p>
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/images 1.png" class="img-fluid" alt="Galaxy">
+									</div>
+									<div class="thumb-content">
+										<h4>Samsung Galaxy S8</h4>
+										<p class="item-price"><strike>$599.00</strike> <span>$569.00</span></p>
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>						
+						</div>
+					</div>
+					<div class="item carousel-item">
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/download 5.png" class="img-fluid" alt="iPhone">
+									</div>
+									<div class="thumb-content">
+										<h4>Apple iPhone</h4>
+										<p class="item-price"><strike>$369.00</strike> <span>$349.00</span></p>
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/download 6.png" class="img-fluid" alt="Canon">
+									</div>
+									<div class="thumb-content">
+										<h4>Canon DSLR</h4>
+										<p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/download 7.png" class="img-fluid" alt="Pixel">
+									</div>
+									<div class="thumb-content">
+										<h4>Google Pixel</h4>
+										<p class="item-price"><strike>$450.00</strike> <span>$418.00</span></p>
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+											</ul>
+										</div>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>	
+							<div class="col-sm-3">
+								<div class="thumb-wrapper">
+									<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+									<div class="img-box">
+										<img src="./assets/img/images 2.png" class="img-fluid" alt="Watch">
+									</div>
+									<div class="thumb-content">
+										<h4>Apple Watch</h4>
+										<p class="item-price"><strike>$350.00</strike> <span>$330.00</span></p>
+										<div class="star-rating">
+											<ul class="list-inline">
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											</ul>
+										</div>
+										<a href="https://monalizaaaa.netlify.app/" class="btn btn-primary">Add to Cart</a>
+									</div>						
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Carousel controls -->
+				<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+				<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="txt-gic2">
+		<a href="">View All</a>
+		<div class="gic">
+			<img src="./assets/img/grommet-icons_form-next-link.png" alt="">
+		</div>
+	</div>
+	</div>
+	
+	
+	<div class="mainn">
+			<div class="photo">
+					<img src="./assets/img/Rectangle 1446.png" alt="">
+			</div>
+			<div class="text3">
+				<h4>
+					experiences
+				</h4>
+				<h1>
+					we provide you the best experience
+				</h1>
+				<p>
+					You don’t have to worry about the result because all of these interiors are made by people who are professionals in their fields with an elegant and lucurious style and with premium quality materials
+				</p>
+				<div class="txt-gic">
+					<a href="">More Info</a>
+					<div class="gic">
+						<img src="./assets/img/grommet-icons_form-next-link.png" alt="">
+					</div>
+				</div>
+			</div>
+	</div>
+	
+	
+	<div class="mainn-next">
+		<div class="text3">
+			<h4>
+				Materials
+			</h4>
+			<h1>
+				Very serious materials for making furniture		</h1>
+			<p>
+				Because panto was very serious about designing furniture for our environment, using a very expensive and famous capital but at a relatively low price		</p>
+			<div class="txt-gic">
+				<a href="">More Info</a>
+				<div class="gic">
+					<img src="./assets/img/grommet-icons_form-next-link.png" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="photo2">
+			<div class="phs">
+				<img src="./assets/img/Group 48095417.png" alt="">
+				<img src="./assets/img/Group 48095419.png" alt="">
+			</div>
+	
+			<img class="unic" src="./assets/img/Rectangle 1446 (1).png" alt="">
+		</div>
+	</div>
+	
+	
+	
+	<div class="naxaverj">
+		<div class="nax-text">
+		<p>
+			Testimonials
+		</p>
+		<h1>
+			Our Client Reviews
+		</h1>
+		</div>
+	
+		<div class="nax-com">
+			<div class="com1">
+	
+			</div>
+			<div class="com2">
+	
+			</div>
+			<div class="com3">
+				
+			</div>
+		</div>
+	
+	</div>
+	
+	<footer>
+		<div class="log-text-navv">
+			<div class="loggoo-text">
+				<div class="loggoo">
+					<a href="#"><img src="./assets/img/icon.svg" alt="" width="250px"></a>
+				</div>
+				<div class="text-lgo">
+					<p>
+						The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.
+					</p>
+				</div>
+			</div>
+			<div class="navvv">
+					<ul>
+						<p>Services</p>
+						<li><a href="">Email Marketing</a></li>
+						<li><a href="">Campaigns</a></li>
+						<li><a href="">Branding</a></li>
+					</ul>
+					<ul>
+						<p>Furniture</p>
+						<li><a href="">Beds</a></li>
+						<li><a href="">Chair</a></li>
+						<li><a href="">All</a></li>
+					</ul>
+					<ul>
+						<p>Follow Us</p>
+						<div class="face">
+							<div class="face-img">
+								<a href=""><img src="./assets/img/001-facebook.png" alt=""></a>
+							</div>
+							<div class="face-text">
+								<li><a href="">Facebook</a></li>
+							</div>
+						</div>
+	
+						<div class="Twit">
+							<div class="Twit-img">
+								<a href=""><img src="./assets/img/003-twitter.png" alt=""></a>
+							</div>
+							<div class="Twit-text">
+								<li><a href="">Twitter</a></li>
+							</div>
+						</div>
+	
+						<div class="Insta">
+							<div class="Insta-img">
+								<a href=""><img src="./assets/img/004-instagram.png" alt=""></a>
+							</div>
+							<div class="Insta-text">
+								<li><a href="">Instagram</a></li>
+							</div>
+						</div>
+					</ul>
+			</div>
+		</div>
+	
+		<div class="verjjj">
+			<div class="verjp">
+				<p>
+					Copyright © 2021
+				</p>
+			</div>
+			<div class="verja">
+				<a href="">Terms & Conditions</a>
+				<a href="">Privacy Policy</a>
+			</div>
+		</div>
+	
+	</footer>
+	</div>
+
+
+
+<script src="./js/index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
+
+
+
